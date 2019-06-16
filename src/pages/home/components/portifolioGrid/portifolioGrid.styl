@@ -1,0 +1,39 @@
+.portifolio
+  padding 2rem 0
+  margin 0 auto
+  max-width 80vw
+
+  .portifolio__article__title
+    text-align left
+
+  .portifolio-grid
+    display grid
+    grid-row-gap 2rem
+    justify-content space-between
+    grid-template-columns repeat(auto-fill, calc(50% - 30px))
+
+  .portifolio-grid__item__image
+      transition opacity 350ms ease-in-out,transform 400ms ease-in-out
+      z-index 2
+      overflow hidden
+
+  .portifolio-grid__item
+    overflow hidden
+    &:hover
+      transition color 0.1s ease-in-out
+      .portifolio-grid__item__image
+        opacity 0.5
+        transform scale(1.2)
+        filter: blur(1px);
+
+  .portifolio-grid__item__image_thumb
+    max-width 100%
+    height auto
+
+@media (max-width: 768px)
+  .portifolio-grid
+    grid-template-columns auto !important
+    grid-template-rows auto
+    .portifolio-grid__item
+      height auto
+      margin-bottom 1rem
